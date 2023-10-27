@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:gravity="center"
+    android:background="@color/FondoApp"
+    android:orientation="vertical"
+    tools:context=".UserRegisterActivity">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:textSize="35sp"
+        android:layout_marginBottom="12dp"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo3"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="50dp"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:text="@string/titulo4" />
+
+    <EditText
+        android:id="@+id/editTextNombreRegistro"
+        android:layout_width="350dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/white"
+        android:textAlignment="center"
+        android:ems="10"
+        android:hint="@string/nombre_registro"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:textColorHint="#333030"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editTextEmailRegistro"
+        android:layout_width="350dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/white"
+        android:textAlignment="center"
+        android:ems="10"
+        android:hint="@string/correo_registro"
+        android:importantForAutofill="no"
+        android:inputType="textEmailAddress"
+        android:textColorHint="#333030"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editTextContraseñaRegistro"
+        android:layout_width="350dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/white"
+        android:textAlignment="center"
+        android:ems="10"
+        android:hint="@string/contraseña_registro"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        android:textColorHint="#333030"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/editTextContraseña_Confirmacion_Registro"
+        android:layout_width="350dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="35dp"
+        android:background="@color/white"
+        android:textAlignment="center"
+        android:ems="10"
+        android:hint="@string/confirma_contraseña_registro"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
+        android:textColorHint="#333030"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btn_registro"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="@color/ColorButtons"
+        android:text="@string/boton_register"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
+
+</LinearLayout>
+

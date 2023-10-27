@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    android:gravity="center"
+    android:background="@color/FondoApp"
+    android:orientation="vertical"
+    tools:context=".HomeActivity">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:textSize="35sp"
+        android:layout_marginBottom="12dp"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo5"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="50dp"
+        android:textSize="18sp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:text="@string/titulo6" />
+
+    <Button
+        android:id="@+id/btn_categorias"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/white"
+        android:text="@string/boton_categorias"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btn_estadisticas"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="10dp"
+        android:backgroundTint="@color/white"
+        android:text="@string/boton_estadisticas"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/btn_consejos"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="15dp"
+        android:backgroundTint="@color/white"
+        android:text="@string/boton_consejos"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+</LinearLayout>
