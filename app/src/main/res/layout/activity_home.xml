@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/FondoApp"
+    android:background="@drawable/home"
     android:orientation="vertical"
     android:padding="20dp"
     android:gravity="center"
     tools:context=".HomeActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginBottom="20dp"
+        android:contentDescription="@string/descriptionlogo"
+        app:srcCompat="@drawable/logo"
+        tools:ignore="ImageContrastCheck" />
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:textSize="35sp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="8dp"
         android:layout_height="wrap_content"
         android:text="@string/titulo5"
         android:textAlignment="center"
@@ -24,44 +34,59 @@
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="50dp"
         android:textSize="18sp"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:text="@string/titulo6" />
+        android:text="@string/titulohome" />
 
     <Button
         android:id="@+id/btn_categorias"
         android:layout_width="300dp"
         android:layout_height="60dp"
+        android:textStyle="bold"
         android:layout_marginTop="35dp"
         android:layout_marginBottom="10dp"
         android:backgroundTint="@color/white"
         android:text="@string/boton_categorias"
         android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:textSize="23sp"
+        app:icon="@drawable/categoriesicon"
+        app:iconPadding="0dp"
+        app:iconSize="30dp"
+        app:iconTint="@color/black" />
 
     <Button
         android:id="@+id/btn_estadisticas"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
         android:layout_marginBottom="10dp"
         android:backgroundTint="@color/white"
         android:text="@string/boton_estadisticas"
         android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:textSize="23sp"
+        app:icon="@drawable/statisticsicon"
+        app:iconPadding="0dp"
+        app:iconSize="30dp"
+        app:iconTint="@color/black" />
 
     <Button
         android:id="@+id/btn_consejos"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="15dp"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
         android:backgroundTint="@color/white"
         android:text="@string/boton_consejos"
         android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:textSize="23sp"
+        app:icon="@drawable/consejosicon"
+        app:iconPadding="0dp"
+        app:iconSize="30dp"
+        app:iconTint="@color/black" />
 
 </LinearLayout>
