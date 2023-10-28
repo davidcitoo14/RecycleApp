@@ -16,9 +16,9 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        categories.findViewById(R.id.btn_categorias);
-        statistics.findViewById(R.id.btn_estadisticas);
-        recommendations.findViewById(R.id.btn_consejos);
+        categories=findViewById(R.id.btn_categorias);
+        statistics=findViewById(R.id.btn_estadisticas);
+        recommendations=findViewById(R.id.btn_consejos);
 
         Intent ircategorias = new Intent(getApplicationContext(), CategoriesActivity.class);
         Intent irestadisticas = new Intent(getApplicationContext(), StatisticsActivity.class);

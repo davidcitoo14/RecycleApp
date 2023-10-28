@@ -18,11 +18,11 @@ public class UserRegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_register);
 
-        nameR.findViewById(R.id.editTextNombreRegistro);
-        emailR.findViewById(R.id.editTextEmailRegistro);
-        passwordR.findViewById(R.id.editTextContraseñaRegistro);
-        confirm_passwordR.findViewById(R.id.editTextContraseña_Confirmacion_Registro);
-        registarUser.findViewById(R.id.btn_registro);
+        nameR=findViewById(R.id.editTextNombreRegistro);
+        emailR=findViewById(R.id.editTextEmailRegistro);
+        passwordR=findViewById(R.id.editTextContraseñaRegistro);
+        confirm_passwordR=findViewById(R.id.editTextContraseña_Confirmacion_Registro);
+        registarUser=findViewById(R.id.btn_registro);
 
         Intent usuarioregistrado = new Intent(getApplicationContext(), LoginActivity.class);
 

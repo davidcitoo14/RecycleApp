@@ -16,10 +16,10 @@ public class CategoriesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categories);
 
-        paper.findViewById(R.id.btn_papel);
-        vidrio.findViewById(R.id.btn_vidrio);
-        plastico.findViewById(R.id.btn_plastico);
-        bateria.findViewById(R.id.btn_baterias);
+        paper=findViewById(R.id.btn_papel);
+        vidrio=findViewById(R.id.btn_vidrio);
+        plastico=findViewById(R.id.btn_plastico);
+        bateria=findViewById(R.id.btn_baterias);
 
         Intent irpapel = new Intent(getApplicationContext(), RegisterPaperActivity.class);
         Intent irvidrio = new Intent(getApplicationContext(), RegisterVidrioActivity.class);

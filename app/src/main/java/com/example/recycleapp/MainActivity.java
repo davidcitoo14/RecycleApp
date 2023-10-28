@@ -1,7 +1,6 @@
 package com.example.recycleapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,14 +15,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        inicio.findViewById(R.id.btn_inicio);
+        inicio=findViewById(R.id.btn_inicio);
 
-        Intent empezar_inicio = new Intent(getApplicationContext(), LoginActivity.class);
+        Intent empezar = new Intent(getApplicationContext(), LoginActivity.class);
 
         inicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(empezar_inicio);
+                startActivity(empezar);
             }
         });
 
