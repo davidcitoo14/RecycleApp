@@ -75,7 +75,7 @@
             android:layout_width="3dp"
             android:layout_height="320dp"
             android:layout_gravity="center"
-            android:background="@color/gris">
+            android:background="@color/Gris_claro">
         </View>
 
         <LinearLayout
@@ -110,7 +110,7 @@
             android:layout_width="3dp"
             android:layout_height="320dp"
             android:layout_gravity="center"
-            android:background="@color/gris">
+            android:background="@color/Gris_claro">
         </View>
 
         <LinearLayout
@@ -145,7 +145,7 @@
             android:layout_width="3dp"
             android:layout_height="320dp"
             android:layout_gravity="center"
-            android:background="@color/gris">
+            android:background="@color/Gris_claro">
         </View>
 
         <LinearLayout
@@ -180,7 +180,7 @@
             android:layout_width="3dp"
             android:layout_height="320dp"
             android:layout_gravity="center"
-            android:background="@color/gris">
+            android:background="@color/Gris_claro">
         </View>
 
         <LinearLayout
@@ -215,7 +215,7 @@
             android:layout_width="3dp"
             android:layout_height="320dp"
             android:layout_gravity="center"
-            android:background="@color/gris">
+            android:background="@color/Gris_claro">
         </View>
 
         <LinearLayout
@@ -250,7 +250,7 @@
             android:layout_width="3dp"
             android:layout_height="320dp"
             android:layout_gravity="center"
-            android:background="@color/gris">
+            android:background="@color/Gris_claro">
         </View>
 
         <LinearLayout
@@ -285,7 +285,7 @@
             android:layout_width="3dp"
             android:layout_height="320dp"
             android:layout_gravity="center"
-            android:background="@color/gris">
+            android:background="@color/Gris_claro">
         </View>
 
         <LinearLayout
@@ -320,7 +320,7 @@
             android:layout_width="3dp"
             android:layout_height="320dp"
             android:layout_gravity="center"
-            android:background="@color/gris">
+            android:background="@color/Gris_claro">
         </View>
 
         <LinearLayout
@@ -355,7 +355,7 @@
             android:layout_width="3dp"
             android:layout_height="320dp"
             android:layout_gravity="center"
-            android:background="@color/gris">
+            android:background="@color/Gris_claro">
         </View>
 
         <LinearLayout
