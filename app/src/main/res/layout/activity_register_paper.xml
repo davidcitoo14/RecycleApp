@@ -21,7 +21,7 @@
         android:textStyle="bold" />
 
     <Spinner
-        android:id="@+id/spinnerMonthElectricity"
+        android:id="@+id/spinnerMonthCantPaper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
