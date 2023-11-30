@@ -1,39 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/btnregisterBat"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/itemregistro"
+    android:gravity="center"
     android:orientation="vertical"
     android:padding="20dp"
-    android:gravity="center"
     tools:context=".RegisterBatteryActivity">
 
     <TextView
         android:id="@+id/textbateria"
         android:layout_width="match_parent"
-        android:textSize="35sp"
-        android:layout_marginBottom="100dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
         android:text="@string/text_bateria"
         android:textAlignment="center"
         android:textColor="@color/black"
+        android:textSize="35sp"
         android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/editTextMesBateria"
-        android:layout_width="350dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@color/white"
-        android:textAlignment="center"
-        android:ems="10"
-        android:hint="@string/text_mes"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        android:textColorHint="#333030"
-        android:textSize="20sp" />
+    <Spinner
+        android:id="@+id/spinnerMonthCantBaterys"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:entries="@array/months"
+        android:popupElevation="10dp"
+        android:scrollbarSize="6dp"
+        tools:ignore="TouchTargetSizeCheck" />
+
 
     <EditText
         android:id="@+id/editTextCantidadBateria"
@@ -42,11 +39,11 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:background="@color/white"
-        android:textAlignment="center"
         android:ems="10"
         android:hint="@string/text_cantidadbateria"
         android:importantForAutofill="no"
         android:inputType="text"
+        android:textAlignment="center"
         android:textColorHint="#333030"
         android:textSize="20sp" />
 
@@ -57,16 +54,16 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:background="@color/white"
-        android:textAlignment="center"
         android:ems="10"
         android:hint="@string/text_valor"
         android:importantForAutofill="no"
         android:inputType="text"
+        android:textAlignment="center"
         android:textColorHint="#333030"
         android:textSize="20sp" />
 
     <Button
-        android:id="@+id/btn_registro"
+        android:id="@+id/btn_registroBat"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"

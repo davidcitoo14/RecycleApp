@@ -20,20 +20,16 @@
         android:textColor="@color/black"
         android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/editTextMesPlastico"
-        android:layout_width="350dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@color/white"
-        android:textAlignment="center"
-        android:ems="10"
-        android:hint="@string/text_mes"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        android:textColorHint="#333030"
-        android:textSize="20sp" />
+    <Spinner
+        android:id="@+id/spinnerMonthCantPlastic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:entries="@array/months"
+        android:popupElevation="10dp"
+        android:scrollbarSize="6dp"
+        tools:ignore="TouchTargetSizeCheck" />
+
 
     <EditText
         android:id="@+id/editTextCantidadPlastico"
@@ -66,7 +62,7 @@
         android:textSize="20sp" />
 
     <Button
-        android:id="@+id/btn_registro"
+        android:id="@+id/btn_registroBat"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
