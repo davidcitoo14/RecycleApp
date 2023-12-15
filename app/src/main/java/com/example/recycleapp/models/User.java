@@ -1,17 +1,20 @@
 package com.example.recycleapp.models;
 
 public class User {
+   // private  String ID;
     private String name;
     private String email;
 
     private String password;
 
-    public User(String name, String email,  String password) {
+    public User( String name, String email, String password) {
+       //this.ID = id;
         this.name = name;
         this.email = email;
 
         this.password = password;
     }
+
 
     public String getName() {
         return name;
@@ -35,7 +38,9 @@ public class User {
         return password;
     }
 
+
     public void setPassword(String password) {
         this.password = password;
     }
 }
+

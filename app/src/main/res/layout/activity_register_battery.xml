@@ -21,16 +21,14 @@
         android:textSize="35sp"
         android:textStyle="bold" />
 
-    <Spinner
-        android:id="@+id/spinnerMonthCantBaterys"
+    <EditText
+        android:id="@+id/editTexttipoPlast"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:entries="@array/months"
-        android:popupElevation="10dp"
-        android:scrollbarSize="6dp"
-        tools:ignore="TouchTargetSizeCheck" />
-
+        android:layout_weight="0"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Tipo bateria" />
 
     <EditText
         android:id="@+id/editTextCantidadBateria"
@@ -63,7 +61,7 @@
         android:textSize="20sp" />
 
     <Button
-        android:id="@+id/btn_registroBat"
+        android:id="@+id/btn_registrouser"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"

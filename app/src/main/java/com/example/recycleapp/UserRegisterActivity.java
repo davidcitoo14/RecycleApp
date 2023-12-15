@@ -8,19 +8,29 @@ import com.example.recycleapp.models.User;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
 
 public class UserRegisterActivity extends AppCompatActivity {
 
     EditText nameR, emailR, passwordR, confirm_passwordR;
     Button registarUser;
+    String name,email,password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,92 +41,108 @@ public class UserRegisterActivity extends AppCompatActivity {
         emailR = findViewById(R.id.editTextEmailRegistro);
         passwordR = findViewById(R.id.editTextContraseñaRegistro);
         confirm_passwordR = findViewById(R.id.editTextContraseña_Confirmacion_Registro);
-        registarUser = findViewById(R.id.btn_registroBat);
+        registarUser = findViewById(R.id.btn_registrouser);
 
-        Intent usuarioregistrado = new Intent(getApplicationContext(), LoginActivity.class);
-        Intent login= new Intent(getApplicationContext(),
+       Intent usuarioregistrado = new Intent(getApplicationContext(), LoginActivity.class);
+       Intent logina= new Intent(getApplicationContext(),
                 MainActivity.class);
+        Intent Login1= new Intent(getApplicationContext(),
+                LoginActivity.class);
         registarUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(validateUser()){
-                    User user=recyclerUser();
-                    lookUser(user);
-                    Toast.makeText(getApplicationContext(),
-                            "Registro Exitoso",Toast.LENGTH_LONG).show();
-                    try {
-                        sleep(500);
-                        startActivity(login);
-                        finish();
-                    } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
-                    }
 
-                }else{
-                    Toast.makeText(getApplicationContext(),
-                            "Todos los campos deben estar diligenciados",Toast.LENGTH_LONG).show();
+                if (!nameR.getText().toString().isEmpty() && !emailR.getText().toString().isEmpty() &&
+                         !passwordR.getText().toString().isEmpty() &&
+                        !confirm_passwordR.getText().toString().isEmpty()) {
+                    // Revisar si las contraseñas coinciden
+                    if (passwordR.getText().toString().equals(confirm_passwordR.getText().toString())) {
+                        // Validar si los datos ya existen en el archivo
+                        if (datosExisten(emailR.getText().toString(),  nameR.getText().toString())) {
+                            // Los datos ya existen
+                            Toast.makeText(getApplicationContext(), "El correo, usuario  ya existen", Toast.LENGTH_SHORT).show();
+                        } else {
+                            // Los datos no existen, realizar el registro
+                            // Crear un nuevo objeto Usuario
+                            User nuevoUsuario = new User(nameR.getText().toString(),
+                                    emailR.getText().toString(),
+                                    passwordR.getText().toString());
+                            // Guardar los datos en el archivo
+                            guardarRegistro(nuevoUsuario);
+                            // Ir al activity de inicio de sesión
+                            startActivity(Login1);
+                        }
+                    } else {
+                        // Las contraseñas no coinciden
+                        Toast.makeText(getApplicationContext(), "Las contraseñas no coinciden",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    // Los campos estan vacios
+                    Toast.makeText(getApplicationContext(), "Los campos no pueden estar vacíos",
+                            Toast.LENGTH_SHORT).show();
                 }
             }
-
         });
 
     }
 
-    public boolean validateUser() {
-        boolean validate = true;
-        if (nameR.getEditableText().toString().isEmpty()) {
-            nameR.setBackgroundColor(Color.RED);
-            validate = false;
+    private void guardarRegistro(User nuevoUsuario) {
+
+        File file= new File(getFilesDir(), "usuario.txt");
+
+        try {
+            FileWriter writer = new FileWriter(file, true); // El segundo parámetro "true" indica que se agregará al final del archivo existente
+            BufferedWriter bufferedWriter = new BufferedWriter(writer);
+            String nuevoRegistro = nuevoUsuario.getName() + "," + nuevoUsuario.getEmail() + "," + nuevoUsuario.getPassword() + "\n";
+            bufferedWriter.write(nuevoRegistro);
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        if (emailR.getEditableText().toString().isEmpty()) {
-            emailR.setBackgroundColor(Color.RED);
-            validate = false;
-        }
-        if (passwordR.getEditableText().toString().isEmpty()) {
-            passwordR.setBackgroundColor(Color.RED);
-            validate = false;
-        }
-        if (confirm_passwordR.getEditableText().toString().isEmpty()) {
-            confirm_passwordR.setBackgroundColor(Color.RED);
-            validate = false;
-        }
-        return validate;
     }
 
-    public User recyclerUser() {
-        String nameUs, emailUs, passwordUs;
-        nameUs = nameR.getEditableText().toString();
-        emailUs = emailR.getEditableText().toString();
-        passwordUs = passwordR.getEditableText().toString();
-        User usuario = new User(nameUs, emailUs, passwordUs);
+    private boolean datosExisten(String email, String name) {
+        File file = new File(getFilesDir(), "usuario.txt");
 
-        return usuario;
+        try {
+            FileReader reader = new FileReader(file);
+            BufferedReader bufferedReader = new BufferedReader(reader);
+            String line;
+            List<String> existingEmails = new ArrayList<>();
+            List<String> existingNombresUsuarios = new ArrayList<>();
 
+            while ((line = bufferedReader.readLine()) != null) {
+                String[] data = line.split(",");
+
+
+                existingNombresUsuarios.add(data[0]);
+                existingEmails.add(data[1]);
+            }
+
+            bufferedReader.close();
+
+            return existingEmails.contains(email)  || existingNombresUsuarios.contains(name);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return false;
     }
-      public void lookUser (User usuario){
-          File fileUser=new File(getFilesDir(), "usuario.txt");
+
+}
 
 
-          try {
-              //Se define el FileWriter
-              FileWriter writer=new FileWriter(fileUser,true);
-              //BufferedWriter se utiliza para almacenar muchos datos (recomendado)
-              //Buffer es un espacio de memoria temporal que nos permite realizar multiples transacciones de datos de forma má rápida
-              BufferedWriter bufferedWriter= new BufferedWriter(writer);
-              bufferedWriter.write(
 
-                              usuario.getName()+","+
-                              usuario.getEmail()+","+
-                              usuario.getPassword()
-              );
-              bufferedWriter.newLine();
-              bufferedWriter.close();
-          }catch (Exception error){
-              error.printStackTrace();
-          }
-      }
 
-    }
+
+
+
+
+
+
+
 
 
 
